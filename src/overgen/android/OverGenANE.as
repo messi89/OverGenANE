@@ -142,7 +142,20 @@ package overgen.android
 		protected function handler_infoBTNclick($evt:MouseEvent):void
 		{
 			texteInfo.text="";
-			_fb.requestWithGraphPath("/me/friends", null, "GET", handler_requesetWithGraphPath);			
+			//_fb.requestWithGraphPath("/me/friends", null, "GET", handler_requesetWithGraphPath);
+			var params:Object = { 
+				message: "test",
+				link: "http://www.google.com",
+				caption: "overgen"
+				
+			}
+			_fb.dialog("feed", params, handler_feed_dialog, true);
+		}
+		
+		private function handler_feed_dialog():void
+		{
+			// TODO Auto Generated method stub
+			
 		}
 		
 		///////////publish event
